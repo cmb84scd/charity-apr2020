@@ -1,12 +1,12 @@
 ![Build Status][1]
 ## Re-Engage Portal
-This tool helps volunteer coordinators for Re-Engage. Re-Engage is a charity that organises tea parties for elderly members in the community to address isolation and loneliness. 
+This tool helps volunteer coordinators for Re-Engage. Re-Engage is a charity that organises tea parties for elderly members in the community to address isolation and loneliness.
 
-**Background**: Each month, a driver from a group of volunteers is matched with an elderly guest, with drivers and guests who live close to one another being paired preferentially. Drivers then pick up and drop off their assigned guest at a central location where the charity runs a tea party. 
+**Background**: Each month, a driver from a group of volunteers is matched with an elderly guest, with drivers and guests who live close to one another being paired preferentially. Drivers then pick up and drop off their assigned guest at a central location where the charity runs a tea party.
 
-**Problem**: Driver/Guest pairings are often different each month based on the participants' changing schedules. Coordinating everyone involved was done manually using spreadsheets and required a substantial number of hours to complete, with the shortest guest/driver pairs being created by looking up participants' addresses in Google Maps and eyeballing the best pairings. 
+**Problem**: Driver/Guest pairings are often different each month based on the participants' changing schedules. Coordinating everyone involved was done manually using spreadsheets and required a substantial number of hours to complete, with the shortest guest/driver pairs being created by looking up participants' addresses in Google Maps and eyeballing the best pairings.
 
-**Solution**: The Re-Engage Coordinator Portal helps coordinators by automating the administrative tasks involved. 
+**Solution**: The Re-Engage Coordinator Portal helps coordinators by automating the administrative tasks involved.
 
 ### The Team
 [![ezgif.com-gif-maker45afae518b3e29ba.gif](https://s7.gifyu.com/images/ezgif.com-gif-maker45afae518b3e29ba.gif)](https://gifyu.com/image/QKpL)
@@ -15,26 +15,26 @@ This tool helps volunteer coordinators for Re-Engage. Re-Engage is a charity tha
 - Coordinators can login/logout
 - View, add, and delete members (drivers & guests), their addresses, and telephone numbers
 - View and update members' availabilities
-- Generate paired routes for drivers and guests using three algorithms: 
+- Generate paired routes for drivers and guests using three algorithms:
   * `shortest` (produces non-optimal pairings but runs very quickly - good for large samples)
   * `average` (always produces optimal pairings but runs slowly - good for small samples)
   * `smart` (a genetic algorithms that often produces optimal pairings and runs substantially faster than the `average` algorithm)
 - Displays the generated paired routes on a map with contact information
 
 ### Tech Stack
-- **[Mongo](https://www.mongodb.com)** as as our non-relational database. 
+- **[Mongo](https://www.mongodb.com)** as as our non-relational database.
 - **[Express](https://expressjs.com/)** web framework for Node.js.
-- **[React](https://reactjs.org)** as a front end controller. 
+- **[React](https://reactjs.org)** as a front end controller.
 - **[Node](https://nodejs.org/en/)** for the development environment.
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) as our development language.
-- [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start) to generate routes for guest/driver pairs. 
+- [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/start) to generate routes for guest/driver pairs.
 - [Mongoose](https://mongoosejs.com) to model objects for MongoDB.
 - [Nodemon](https://nodemon.io/) to reload the server automatically.
 - [Prettier](https://prettier.io) for linting.
 - [Jest](https://jestjs.io/) for testing.
 - [Cypress](https://www.cypress.io/) for end-to-end testing.
 - [Travis](https://travis-ci.org) for continuous integration and build testing.
-- [Heroku](https://www.heroku.com) for deployment. 
+- [Heroku](https://www.heroku.com) for deployment.
 
 ### Installation Guide
 1. Clone or Fork this repo to your local machine
@@ -47,10 +47,10 @@ This tool helps volunteer coordinators for Re-Engage. Re-Engage is a charity tha
 8. Visit http://localhost:3000 to see the website in action!
 
 ### Testing
-The test server must be running for integration tests to pass. The test server runs on port 3030 at http://localhost:3030. 
+The test server must be running for integration tests to pass. The test server runs on port 3030 at http://localhost:3030.
 
-* In one terminal (start the test server): `npm run start:test` 
-* In another terminal, run these commands 
+* In one terminal (start the test server): `npm run start:test`
+* In another terminal, run these commands
   * To run all the tests (Jest and Cypress): `npm test`
   * To run Jest unit tests: `npm run test:unit` or `npx jest`
   * To run Cypress feature tests: `npm run test:integration`
@@ -69,8 +69,8 @@ We employed extensive domain and database modelling for our application before b
 `Coordinator Access`:
 
 ```
-As a coordinator 
-So that I can use portal 
+As a coordinator
+So that I can use portal
 I would like to log in with an account created by an admin
 ```
 
@@ -89,19 +89,19 @@ I would like to see a list drivers with their name and address
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can recruit new drivers
 I would like to input new driver’s with their name and address
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can organise the drivers effectively
 I would like to view the drivers availability
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can respond to the changing demands of the drivers schedules
 I would like to update or add to the drivers availability
 ```
@@ -114,19 +114,19 @@ I would like to see a list guests with their name and address
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can introduce more guests to the group
 I would like to input a guests name and address
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can organise the guests effectively
 I would like to view the guests availability
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can respond to the changing demands of the guests schedules
 I would like to update or add to the guests availability
 ```
@@ -134,24 +134,24 @@ I would like to update or add to the guests availability
 `Route Generation`:
 
 ```
-As a coordinator 
+As a coordinator
 So that I can see the months pairings
 I would like to select a month from drop down menu
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can generate the pairings
 I would like to see a table of randomly paired drivers and guests
 ```
 
 ```
-As a coordinator 
+As a coordinator
 So that I can visualise the pairing logistics
 I would like to see a map of the pairs in the table
 ```
 
-[1]: https://travis-ci.org/Tracht/charity-apr2020.svg?branch=master
+[1]: https://travis-ci.org/cmb84scd/charity-apr2020
 [2]: https://github.com/Tracht/charity-apr2020/wiki/Product-Spec
 
 ### Snapshots of the website
