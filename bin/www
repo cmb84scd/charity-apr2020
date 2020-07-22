@@ -21,8 +21,8 @@ app.set('port', port);
 Setup MongoDB connection
 */
 
-if ( mongolab_uri ) {
-  mongoose.connect(mongolab_uri, {
+if ( process.env.MONGOLAB_URI ) {
+  mongoose.connect(process.env.MONGOLAB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useFindAndModify: false
