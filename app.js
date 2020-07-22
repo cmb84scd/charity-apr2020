@@ -14,6 +14,7 @@ var availRouter = require('./routes/availability');
 
 var app = express();
 app.locals.api_key = process.env.REACT_APP_MAP_API_KEY;
+var mongolab_uri = process.env.MONGOLAB_URI
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -36,7 +37,7 @@ app.use('/availability', availRouter);
 //   name: "Jackie",
 //   address: "SE2",
 //   telephone: 07111222333,
-//   role: "driver", 
+//   role: "driver",
 // })
 
 // newMember.save()
