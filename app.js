@@ -4,7 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 require("dotenv").config();
-// const API_KEY = process.env.REACT_APP_MAP_API_KEY;
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -14,7 +13,6 @@ var availRouter = require('./routes/availability');
 
 var app = express();
 app.locals.api_key = process.env.REACT_APP_MAP_API_KEY;
-var mongolab_uri = process.env.MONGOLAB_URI
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -31,16 +29,6 @@ app.use("/users", usersRouter);
 app.use("/pairs", pairsRouter);
 app.use("/admin", adminRouter);
 app.use('/availability', availRouter);
-
-// var Member = require ('./models/member');
-// newMember = new Member( {
-//   name: "Jackie",
-//   address: "SE2",
-//   telephone: 07111222333,
-//   role: "driver",
-// })
-
-// newMember.save()
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
