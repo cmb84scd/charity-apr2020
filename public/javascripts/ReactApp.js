@@ -1,5 +1,5 @@
 class ReactApp extends React.Component {
-  
+
   constructor(props) {
     super(props);
     const token = sessionStorage.getItem("token");
@@ -56,7 +56,6 @@ class ReactApp extends React.Component {
   };
 
   render() {
-    console.log(this.state)
     if (this.state.loggedIn === false) {
       return (
         <form action="admin/login">
@@ -82,7 +81,7 @@ class ReactApp extends React.Component {
 
              <div className="clear-shadow"></div>
              </section>
-              
+
               {(() => {
                 if (this.state.home === true) {
                   return (
