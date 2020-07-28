@@ -13,15 +13,9 @@ class AdminLogin extends React.Component {
     };
   }
 
-  handleChangeName = (e) => {
+  handleLogin = (e) => {
     this.setState({
-      adminName: e.target.value,
-    });
-  };
-
-  handleChangePassword = (e) => {
-    this.setState({
-      password: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -39,10 +33,8 @@ class AdminLogin extends React.Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data.success === true) {
           sessionStorage.setItem("token", data.admin._id);
-          console.log(sessionStorage);
           window.location.replace("/");
         } else {
           alert(`${data.message}`);
@@ -56,6 +48,7 @@ class AdminLogin extends React.Component {
   };
 
   render() {
+    const { adminName, password } = this.state;
     if (this.state.loggedIn === false) {
       return (
         <div className="container col">
@@ -74,33 +67,23 @@ class AdminLogin extends React.Component {
                   <div className="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                     <span className="label-input100">Username</span>
                     <input
-                      id="admin"
-                      className="input100"
-                      type="text"
-                      name="username"
-                      placeholder="Enter username"
-                      onChange={this.handleChangeName}
-                    value={this.state.adminName}></input>
+                      onChange={this.handleLogin} id="admin" name="adminName" value={adminName}
+                      placeholder="Enter username" type="text" className="input100"></input>
                     <span className="focus-input100"></span>
                   </div>
 
                   <div className="wrap-input100 validate-input m-b-18" data-validate="Password is required">
                     <span className="label-input100">Password</span>
                       <input
-                      id="password"
-                      className="input100"
-                      type="password" name="pass"
-                      placeholder="Enter password"
-                      onChange={this.handleChangePassword}
-                      value={this.state.password}
-                      />
+                      onChange={this.handleLogin} id="password" name="password" value={password}
+                      placeholder="Enter password" type="password" className="input100"></input>
                     <span className="focus-input100"></span>
                   </div>
 
                   <div className="container-login100-form-btn">
                     <button id="login" className="login100-form-btn">
                       Login
-                </button>
+                    </button>
                   </div>
                 </form>
               </div>
