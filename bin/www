@@ -32,7 +32,7 @@ if ( process.env.MONGODB_URL ) {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-} else {
+} else if ( process.env.MONGOLAB_URI ) {
   mongoose.connect(process.env.MONGOLAB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
