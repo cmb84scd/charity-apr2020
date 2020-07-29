@@ -21,23 +21,13 @@ app.set('port', port);
 Setup MongoDB connection
 */
 
-if ( process.env.MONGODB_URL ) {
-  mongoose.connect(process.env.MONGODB_URL, {
+console.log("Which DB are we connecting to?", process.env.MONGODB_URL);
+
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // useFindAndModify: false
-  });
-} else if ( 'mongodb://localhost/re_engage' ) {
-  mongoose.connect('mongodb://localhost/re_engage', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-} else if ( process.env.MONGOLAB_URI ) {
-  mongoose.connect(process.env.MONGOLAB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-}
+  }
+);
 
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected!');
