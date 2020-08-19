@@ -27,7 +27,7 @@ AveragePairs.generate = (members) => {
     // clone guests for mutation
     guestClone = _.clone(this.guests);
 
-    for(var j = 0; j < this.guests.length-1; j++) {
+    for(var j = 0; j < this.guests.length; j++) {
       var pairing = {
         pairs: []
       };
@@ -74,7 +74,7 @@ AveragePairs.generate = (members) => {
   });
 
   //calculate average distance
-  pairings.forEach((pairing) => { 
+  pairings.forEach((pairing) => {
     var cumulativeDistance = 0;
     pairing.pairs.forEach((pair) => {
       cumulativeDistance += pair.distance;
@@ -98,7 +98,7 @@ AveragePairs.generate = (members) => {
     pair.id = index+1;
   })
   return bestPairing.pairs;
-  
+
 }
 
 module.exports = AveragePairs;
